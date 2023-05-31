@@ -35,23 +35,30 @@ const UpdateModal = ({ ticket, setIsModalOpen, handleUpdate, selectedTicketId })
                     <label htmlFor="update-modal" className="btn btn-sm btn-circle absolute right-2 top-2" onClick={closeModal}>
                         ✕
                     </label>
+                    <h2 className='text-xl font-bold text-center'>Update</h2>
                     <form onSubmit={handleSubmit} className="grid gap-7 grid-cols-1 mt-10">
+                    <label className='text-lg font-semibold' placeholder='Ticket Type:'><span className='text-red-600'>* </span>Ticket Type:</label>
                         <input
                             name="ticketType"
                             value={ticketType}
                             onChange={(event) => setTicketType(event.target.value)}
                             type="text"
                             placeholder="Ticket Type"
+                            required
                             className="input input-bordered w-full"
                         />
-                        <input
+                        <label className='text-lg font-semibold' placeholder='Description'><span className='text-red-600'>* </span>Description:</label>
+                     
+                        <textarea
                             name="description"
                             value={description}
                             onChange={(event) => setDescription(event.target.value)}
                             type="text"
                             placeholder="Description"
-                            className="input input-bordered w-full"
-                        />
+                            required
+                            className="input input-bordered w-full">
+
+                        </textarea>
 
                         <input name="id" defaultValue={id} hidden type="text" />
 

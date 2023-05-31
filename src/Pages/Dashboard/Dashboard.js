@@ -65,11 +65,12 @@ const Dashboard = () => {
 
     return (
         <div>
-            <div className="overflow-x-auto w-full">
+            <div className="overflow-x-auto w-4/5 mx-auto rounded-xl p-10 shadow-xl">
                 <table className="table w-full">
                     <thead>
                         <tr>
-                            <th>Ticket Type</th>
+                        <th></th>
+                            <th >Ticket Type</th>
                             <th>Description</th>
                             <th>Action</th>
                             <th>
@@ -86,6 +87,7 @@ const Dashboard = () => {
                     <tbody>
                         {tickets.map((ticket, index) => (
                             <Ticket
+                            index={index}
                                 key={index}
                                 ticket={ticket}
                                 handleDelete={handleDelete}
