@@ -32,12 +32,18 @@ const UpdateModal = ({ ticket, setIsModalOpen, handleUpdate, selectedTicketId })
             <input type="checkbox" id="update-modal" className="modal-toggle" checked={true} />
             <div className="modal">
                 <div className="modal-box relative">
-                    <label htmlFor="update-modal" className="btn btn-sm btn-circle absolute right-2 top-2" onClick={closeModal}>
+                    <label
+                        htmlFor="update-modal"
+                        className="btn btn-sm btn-circle 
+                    absolute right-2 top-2"
+                        onClick={closeModal}>
                         ✕
                     </label>
                     <h2 className='text-xl font-bold text-center'>Update</h2>
                     <form onSubmit={handleSubmit} className="grid gap-7 grid-cols-1 mt-10">
-                    <label className='text-lg font-semibold' placeholder='Ticket Type:'><span className='text-red-600'>* </span>Ticket Type:</label>
+                        <label
+                            className='text-lg font-semibold'
+                            placeholder='Ticket Type:'><span className='text-red-600'>* </span>Ticket Type:</label>
                         <input
                             name="ticketType"
                             value={ticketType}
@@ -47,8 +53,10 @@ const UpdateModal = ({ ticket, setIsModalOpen, handleUpdate, selectedTicketId })
                             required
                             className="input input-bordered w-full"
                         />
-                        <label className='text-lg font-semibold' placeholder='Description'><span className='text-red-600'>* </span>Description:</label>
-                     
+                        <label
+                            className='text-lg font-semibold'
+                            placeholder='Description'><span className='text-red-600'>* </span>Description:</label>
+
                         <textarea
                             name="description"
                             value={description}
@@ -62,7 +70,10 @@ const UpdateModal = ({ ticket, setIsModalOpen, handleUpdate, selectedTicketId })
 
                         <input name="id" defaultValue={id} hidden type="text" />
 
-                        <input className="btn btn-accent w-full" type="submit" value="Update" />
+                        <input
+                            className="btn btn-accent w-full"
+                            type="submit"
+                            value="Update" />
                     </form>
                 </div>
             </div>

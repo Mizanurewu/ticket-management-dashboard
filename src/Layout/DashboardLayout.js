@@ -2,7 +2,7 @@ import React from 'react';
 import Navbar from '../Pages/Shared/Navbar/Navbar';
 import { Link, Outlet } from 'react-router-dom';
 import Footer from '../Pages/Footer/Footer';
-import { ImProfile,ImTicket,ImUser,ImFlag,ImEqualizer} from "react-icons/im";
+import { ImProfile, ImTicket, ImUser, ImFlag, ImEqualizer } from "react-icons/im";
 const DashboardLayout = () => {
     return (
         <div>
@@ -20,15 +20,21 @@ const DashboardLayout = () => {
                     <ul className="menu p-4 w-80 bg-[#343A40] text-white border-t-2 border-gray-300">
                         <div className='flex justify-start items-center m-2'>
                             <ImEqualizer></ImEqualizer>
-                            <div><Link className='text-xl font-semibold p-3 mt-10'>Dashboard</Link></div>
+                            <div>
+                                <Link className='text-xl font-semibold p-3 mt-10'>Dashboard</Link>
+                            </div>
                         </div>
                         <div className='flex justify-start items-center m-2'>
                             <ImProfile></ImProfile>
-                            <div><Link className='text-xl font-semibold p-3 mt-10'>My Profile</Link></div>
+                            <div>
+                                <Link className='text-xl font-semibold p-3 mt-10'>My Profile</Link>
+                            </div>
                         </div>
                         <div className='flex justify-start items-center m-2'>
                             <ImTicket></ImTicket>
-                            <div><Link className='text-xl font-semibold p-3 mt-10'>My Ticket</Link></div>
+                            <div>
+                                <Link className='text-xl font-semibold p-3 mt-10'>My Ticket</Link>
+                            </div>
                         </div>
                         <div className='flex justify-start items-center m-2'>
                             <ImUser></ImUser>
@@ -36,10 +42,12 @@ const DashboardLayout = () => {
                         </div>
                         <div className='flex justify-start items-center m-2'>
                             <ImFlag></ImFlag>
-                            <div><Link className='text-xl font-semibold p-3 mt-10'>Ticket Type</Link></div>
+                            <div>
+                                <Link className='text-xl font-semibold p-3 mt-10'>Ticket Type</Link>
+                            </div>
                         </div>
-                        
-                       
+
+
 
                     </ul>
 

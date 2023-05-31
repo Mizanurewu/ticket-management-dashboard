@@ -29,7 +29,8 @@ const BookingModals = ({ setModal, handleBooking }) => {
                         ✕
                     </label>
                     <h2 className='text-xl font-bold text-center'>Add Ticket</h2> {/* Add the header here */}
-                    <form onSubmit={handleAddTicket} className="grid gap-7 grid-cols-1 mt-10">
+                    <form onSubmit={handleAddTicket}
+                        className="grid gap-7 grid-cols-1 mt-10">
                         <label
                             className='text-lg font-semibold'
                             placeholder='Ticket Type:'><span className='text-red-600'>* </span>Ticket Type:</label>
@@ -40,7 +41,9 @@ const BookingModals = ({ setModal, handleBooking }) => {
                             required
                             className="input input-bordered w-full"
                         />
-                        <label className='text-lg font-semibold' placeholder='Description'><span className='text-red-600'>* </span>Description:</label>
+                        <label
+                            className='text-lg font-semibold'
+                            placeholder='Description'><span className='text-red-600'>* </span>Description:</label>
                         <textarea
                             name="description"
                             required
@@ -50,7 +53,10 @@ const BookingModals = ({ setModal, handleBooking }) => {
 
                         </textarea>
 
-                        <input className="btn btn-accent w-full" type="submit" value="Submit" />
+                        <input
+                            className="btn btn-accent w-full"
+                            type="submit"
+                            value="Submit" />
                     </form>
                 </div>
             </div>

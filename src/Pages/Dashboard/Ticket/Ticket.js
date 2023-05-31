@@ -3,7 +3,7 @@ import BookingModal from '../BookingModal/BookingModal';
 import UpdateModal from '../BookingModal/UpdateModal';
 import { FaEdit } from 'react-icons/fa';
 import { AiFillDelete } from "react-icons/ai";
-const Ticket = ({ ticket, handleDelete, handleUpdate,index }) => {
+const Ticket = ({ ticket, handleDelete, handleUpdate, index }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     const { id, ticketType, description } = ticket;
@@ -15,7 +15,7 @@ const Ticket = ({ ticket, handleDelete, handleUpdate,index }) => {
     return (
         <>
             <tr>
-                 <th className="text-black">{index + 1}</th> {/* Add text-black class */}
+                <th className="text-black">{index + 1}</th> {/* Add text-black class */}
                 <td>
                     <h1>{ticketType}</h1>
                 </td>
@@ -25,7 +25,7 @@ const Ticket = ({ ticket, handleDelete, handleUpdate,index }) => {
                 <td>
                     <button onClick={() => handleDelete(id)} className="btn btn-outline text-red-500 m-4 text-2xl"><AiFillDelete className=''></AiFillDelete></button>
                     <button onClick={handleClickUpdate} className="btn btn-outline text-blue-600 m-4 text-2xl">
-                      <FaEdit/>
+                        <FaEdit />
                     </button>
                 </td>
             </tr>
