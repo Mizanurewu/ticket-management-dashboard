@@ -16,7 +16,7 @@ const Dashboard = () => {
 
 
     const handleBooking = (booking) => {
-        addToDb(booking.id, booking); 
+        addToDb(booking.id, booking);
 
         setTickets((prevTickets) => [...prevTickets, booking]);
 
@@ -24,34 +24,34 @@ const Dashboard = () => {
         toast.success('Successfully Added')
     };
     const handleUpdate = (updateTicket) => {
-      if(window.confirm('Are you sure to Update?')){
-        const id = updateTicket.id;
-        setIsModalOpen(true);
-        console.log(updateTicket);
-        updateInDb(updateTicket);
+        if (window.confirm('Are you sure to Update?')) {
+            const id = updateTicket.id;
+            setIsModalOpen(true);
+            console.log(updateTicket);
+            updateInDb(updateTicket);
 
-        const updatedTickets = tickets.map((ticket) => {
-            if (ticket.id === id) {
-                return updateTicket;
-            }
-            return ticket;
-        });
+            const updatedTickets = tickets.map((ticket) => {
+                if (ticket.id === id) {
+                    return updateTicket;
+                }
+                return ticket;
+            });
 
-        setTickets(updatedTickets);
-        toast.success('Successfully Updated')
-      }
+            setTickets(updatedTickets);
+            toast.success('Successfully Updated')
+        }
     };
     const handleDelete = (id) => {
-       if(window.confirm('Are you sure to delete')){
-        console.log(id);
-        removeFromDb(id);
+        if (window.confirm('Are you sure to delete')) {
+            console.log(id);
+            removeFromDb(id);
 
-        const remaining = tickets.filter((ticket) => ticket.id !== id);
-        console.log(remaining);
-        setTickets(remaining);
-        toast.error('Successfully Deleted')
+            const remaining = tickets.filter((ticket) => ticket.id !== id);
+            console.log(remaining);
+            setTickets(remaining);
+            toast.error('Successfully Deleted')
 
-       }
+        }
     };
 
     useEffect(() => {
@@ -69,7 +69,7 @@ const Dashboard = () => {
                 <table className="table w-full">
                     <thead>
                         <tr>
-                        <th></th>
+                            <th></th>
                             <th >Ticket Type</th>
                             <th>Description</th>
                             <th>Action</th>
@@ -85,18 +85,22 @@ const Dashboard = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {tickets.map((ticket, index) => (
-                            <Ticket
-                            index={index}
-                                key={index}
-                                ticket={ticket}
-                                handleDelete={handleDelete}
-                                handleUpdate={handleUpdate}
-                                setIsModalOpen={setIsModalOpen}// for auto close modal after submit
-                                isModalOpen={isModalOpen}
-                            />
+                        {tickets.length === 0 ? (
+                            <h4 className='text-center text-3xl p-5 m-1'>No ticket found. Please add a ticket.</h4>
+                        ) : (
+                            tickets.map((ticket, index) => (
+                                <Ticket
+                                    index={index}
+                                    key={index}
+                                    ticket={ticket}
+                                    handleDelete={handleDelete}
+                                    handleUpdate={handleUpdate}
+                                    setIsModalOpen={setIsModalOpen} // for auto close modal after submit
+                                    isModalOpen={isModalOpen}
+                                />
+                            ))
+                        )}
 
-                        ))}
                     </tbody>
                 </table>
                 {modal && <BookingModal
@@ -105,7 +109,7 @@ const Dashboard = () => {
                 />}
                 <Toaster />
             </div>
-            
+
         </div>
     );
 };
