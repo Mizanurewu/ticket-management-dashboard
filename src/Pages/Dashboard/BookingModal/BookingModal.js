@@ -1,5 +1,5 @@
 import React from 'react';
-import { addToDb } from '../../../storage/fakedb';
+import { addToDb } from '../../../storage/localStorageDb';
 import { v4 as uuidv4 } from 'uuid';
 import { toast } from 'react-hot-toast';
 

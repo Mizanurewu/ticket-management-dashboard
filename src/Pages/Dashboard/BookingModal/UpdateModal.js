@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { updateInDb } from '../../../storage/fakedb';
+import { updateInDb } from '../../../storage/localStorageDb';
 
 const UpdateModal = ({ ticket, setIsModalOpen, handleUpdate, selectedTicketId }) => {
     const { id, ticketType: initialTicketType, description: initialDescription } = ticket;

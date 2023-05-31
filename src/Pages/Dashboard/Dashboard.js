@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Ticket from './Ticket/Ticket';
 import BookingModal from './BookingModal/BookingModal';
-import { addToDb, removeFromDb, updateInDb } from '../../storage/fakedb';
+import { addToDb, removeFromDb, updateInDb } from '../../storage/localStorageDb';
 import toast, { Toaster } from 'react-hot-toast';
 
 const Dashboard = () => {
@@ -55,7 +55,7 @@ const Dashboard = () => {
     };
 
     useEffect(() => {
-        const storedBookings = localStorage.getItem('shopping-cart');
+        const storedBookings = localStorage.getItem('ticket-booking-cart');
 
         if (storedBookings) {
             const parsedBookings = JSON.parse(storedBookings);
